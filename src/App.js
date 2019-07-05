@@ -1,36 +1,18 @@
 import React from 'react';
 import './App.css';
-import {HTMLTable} from '@blueprintjs/core'
+import PersonTable from './componets/PersonTable';
+
+const fakeData = [
+  { firstname: 'Even', lastname: 'Feenstra', age: 30 },
+  { firstname: 'Joe', lastname: 'Shmoe', age: 31 },
+  { firstname: 'Josh', lastname: 'Aharonoff', age: 30 }
+];
 
 function App() {
   return (
-    <div className="App">
-      <HTMLTable striped={true} bordered={true}>
-        <thead>
-          <tr>
-            <th>Firstname</th>
-            <th>Lastname</th> 
-            <th>Age</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Evan</td>
-            <td>Feenstra</td> 
-            <td>30</td>
-          </tr>
-          <tr>
-            <td>Joe</td>
-            <td>Shmoe</td> 
-            <td>31</td>
-          </tr>
-          <tr>
-            <td>Josh</td>
-            <td>Aharonoff</td> 
-            <td>30</td>
-          </tr>
-        </tbody>
-      </HTMLTable>
+    <div style={{ width: '480px', paddingTop: '100px', margin: 'auto' }}>
+      <h2>Person Table</h2>
+      <PersonTable people={fakeData} />
     </div>
   );
 }
